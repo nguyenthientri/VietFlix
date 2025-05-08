@@ -1,4 +1,4 @@
-import dayjs from "dayjs";
+// import * as dayjs from "dayjs";
 import path from "../../constants/path";
 import CircularProgress from "../../pages/MovieDetail/component/CircularProgress";
 import { Movies } from "../../types/Movie.type";
@@ -8,9 +8,9 @@ interface Props {
 }
 
 export default function Movie({ movie }: Props) {
-    const formatDate = (date?: string) => {
-        return dayjs(date).format("MMMM D, YYYY");
-    };
+    // const formatDate = (date?: string) => {
+    //     return dayjs(date).format("MMMM D, YYYY");
+    // };
     return (
         <Link to={`${path.home}${movie.id}`}>
             <div
@@ -39,7 +39,7 @@ export default function Movie({ movie }: Props) {
                         </p>
                         <p className="text-[13px] md:pb-1  text-gray-600">
                             {movie.release_date
-                                ? formatDate(movie.release_date)
+                                ? "formatDate(movie.release_date)"
                                 : "Đang cập nhật"}
                         </p>
                     </div>

@@ -117,11 +117,13 @@ export default function MovieDetail() {
                                 <div className="inline cursor-pointer bg-gray-800 rounded-[20rem] p-1 hover:scale-[1.1] transition-all 0.5s">
                                     <CircularProgress
                                         size={60}
-                                        percentage={(
-                                            Number(
-                                                MovieDetailData?.vote_average
-                                            ) * 10
-                                        ).toFixed(1)}
+                                        percentage={Number(
+                                            (
+                                                Number(
+                                                    MovieDetailData?.vote_average
+                                                ) * 10
+                                            ).toFixed(1)
+                                        )}
                                         strokeWidth={5}
                                         percentage_size={"lg"}
                                     />

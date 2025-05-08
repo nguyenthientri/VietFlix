@@ -1,7 +1,8 @@
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Review } from "../../../../../types/Review.type";
-import dayjs from "dayjs";
+import * as dayjs from "dayjs";
+
 interface ReviewsProps {
     ReviewsData?: Review;
 }

@@ -74,5 +74,5 @@ export type MovieDetails = Pick<
 >;
 export type Movies = Pick<
     Movie,
-    "id" | "title" | "poster_path" | "release_date"| "vote_average" | 
+    "id" | "title" | "poster_path" | "release_date" | "vote_average"
 >;
