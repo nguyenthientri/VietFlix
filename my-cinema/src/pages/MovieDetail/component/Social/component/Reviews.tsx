@@ -1,15 +1,15 @@
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Review } from "../../../../../types/Review.type";
-import * as dayjs from "dayjs";
+// import dayjs from "dayjs";
 
 interface ReviewsProps {
     ReviewsData?: Review;
 }
 const Reviews = ({ ReviewsData }: ReviewsProps) => {
-    const formatDate = (date?: string) => {
-        return dayjs(date).format("MMMM D, YYYY");
-    };
+    // const formatDate = (date?: string) => {
+    //     return dayjs(date).format("MMMM D, YYYY");
+    // };
     return (
         <>
             <div className="p-4 mt-4 flex flex-col rounded-md border-1 border-gray-300 shadow-md shadow-gray-500">
@@ -37,8 +37,7 @@ const Reviews = ({ ReviewsData }: ReviewsProps) => {
                                 <span className="font-bold">
                                     {ReviewsData?.author}
                                 </span>{" "}
-                                on {formatDate(ReviewsData?.created_at)}
-                                {/* on April 30, 2025 */}
+                                {/* on {formatDate(ReviewsData?.created_at)} */}
                             </p>
                         </div>
                     </div>

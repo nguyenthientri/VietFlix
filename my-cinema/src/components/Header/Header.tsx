@@ -69,7 +69,7 @@ export default function Header({ onSearch }: MovieSearchProps) {
                         className="w-[110px] md:w-[130px] flex h-auto order-2 md:order-1"
                     >
                         <img
-                            src="src/assets/img/Screenshot_2025-04-24_170827-removebg-preview.png"
+                            src="src/assets/img/Screenshot_2025-04-24_170827-removebg-preview.jpg"
                             alt=""
                             className="w-full h-full"
                         />
