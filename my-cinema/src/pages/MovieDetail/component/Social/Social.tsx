@@ -11,7 +11,7 @@ export default function Social({ ReviewsData }: ReviewsDataProps) {
                     <p className="font-bold">Social</p>
                     <div className="flex gap-5">
                         <p className="font-bold text-[13px] hover:cursor-pointer">
-                            Reviews
+                            Review
                             <span className="text-gray-500 pl-1">
                                 {ReviewsData?.results?.length}
                             </span>
