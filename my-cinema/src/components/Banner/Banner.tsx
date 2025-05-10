@@ -1,5 +1,7 @@
 import { faPlay, faPlus } from "@fortawesome/free-solid-svg-icons";
-import bg_img from "/src/assets/img/Harpers-Bazaar-Phim-Dune-Part-Two-cua-Timothee-Chalamet_03.jpg";
+import bg_img from "../../assets/img/Harpers-Bazaar-Phim-Dune-Part-Two-cua-Timothee-Chalamet_03.jpg";
+import poster from "../../assets/img/dune_part_2_logo_png_4k_2024_by_andrewvm_dgifpk0-fullview.png";
+import poster_film from "../../assets/img/0x0.webp";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Banner() {
@@ -13,7 +15,7 @@ export default function Banner() {
                 <div className="absolute  grid  grid-cols-12 items-center justify-center h-full text-white">
                     <div className="md:col-span-5 md:col-start-3 col-span-9 col-start-4 grid grid-cols-8">
                         <img
-                            src="/src/assets/img/dune_part_2_logo_png_4k_2024_by_andrewvm_dgifpk0-fullview.png"
+                            src={poster}
                             alt=""
                             className="md:col-span-6 col-span-6"
                         />
@@ -50,7 +52,7 @@ export default function Banner() {
                         </div>
                     </div>
                     <img
-                        src="/src/assets/img/0x0.webp"
+                        src={poster_film}
                         alt=""
                         className="w-full md:col-span-3 md:col-start-9 md:block hidden"
                     />

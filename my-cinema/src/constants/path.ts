@@ -4,6 +4,7 @@ const path = {
     register: "/register",
     logout: "/logout",
     movieDetail: ":id",
+    creditDetail: "/person/:personId",
 } as const;
 
 export default path;

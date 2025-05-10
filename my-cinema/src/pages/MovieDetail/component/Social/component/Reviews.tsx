@@ -42,7 +42,7 @@ const Reviews = ({ ReviewsData }: ReviewsProps) => {
                         </div>
                     </div>
                 </div>
-                <p className="mt-3">{ReviewsData?.author}</p>
+                <p className="mt-3">{ReviewsData?.content}</p>
             </div>
         </>
     );

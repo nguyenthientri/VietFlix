@@ -3,6 +3,7 @@ import {
     faMagnifyingGlass,
     faXmark,
 } from "@fortawesome/free-solid-svg-icons";
+import logo from "../../assets/img/Screenshot_2025-04-24_170827-removebg-preview.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -68,11 +69,7 @@ export default function Header({ onSearch }: MovieSearchProps) {
                         to={`${path.home}`}
                         className="w-[110px] md:w-[130px] flex h-auto order-2 md:order-1"
                     >
-                        <img
-                            src="src/assets/img/Screenshot_2025-04-24_170827-removebg-preview.jpg"
-                            alt=""
-                            className="w-full h-full"
-                        />
+                        <img src={logo} alt="" className="w-full h-full" />
                         <div className="ml-20 md:flex gap-10 text-white hidden">
                             <button className="font-bold cursor-pointer">
                                 Movies
