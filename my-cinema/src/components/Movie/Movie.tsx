@@ -1,4 +1,5 @@
 // import * as dayjs from "dayjs";
+import dayjs from "dayjs";
 import path from "../../constants/path";
 import CircularProgress from "../../pages/MovieDetail/component/CircularProgress";
 import { Movies } from "../../types/Movie.type";
@@ -6,13 +7,17 @@ import { Link } from "react-router-dom";
 interface Props {
     movie: Movies;
 }
-
+const slugify = (name: string) =>
+    name
+        .toLowerCase()
+        .replace(/[\s]+/g, "-")
+        .replace(/[^a-z0-9-]/g, "");
 export default function Movie({ movie }: Props) {
-    // const formatDate = (date?: string) => {
-    //     return dayjs(date).format("MMMM D, YYYY");
-    // };
+    const formatDate = (date?: string) => {
+        return dayjs(date).format("MMMM D, YYYY");
+    };
     return (
-        <Link to={`${path.home}${movie.id}`}>
+        <Link to={`${path.home}${movie.id}-${slugify(movie.title)}`}>
             <div
                 className="w-[150px] h-[280px] lg:w-[180px] lg:h-[340px] rounded-md overflow-hidden md:shadow-md md:shadow-gray-400 group cursor-pointer flex flex-col justify-between"
                 key={movie.id}
@@ -39,7 +44,7 @@ export default function Movie({ movie }: Props) {
                         </p>
                         <p className="text-[13px] md:pb-1  text-gray-600">
                             {movie.release_date
-                                ? "formatDate(movie.release_date)"
+                                ? formatDate(movie.release_date)
                                 : "Đang cập nhật"}
                         </p>
                     </div>

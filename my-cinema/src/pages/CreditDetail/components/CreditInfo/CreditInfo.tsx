@@ -1,12 +1,31 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { Person } from "../../../../types/Person.type";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { useEffect, useRef, useState } from "react";
 
 interface CreditInfoProps {
     CreditInfo?: Person;
 }
 
 const CreditInfo = ({ CreditInfo }: CreditInfoProps) => {
+    const bioRef = useRef<HTMLParagraphElement>(null);
+    const [showReadMore, setShowReadMore] = useState(false);
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    useEffect(() => {
+        const element = bioRef.current;
+        if (element) {
+            const lineHeight = parseFloat(getComputedStyle(element).lineHeight);
+            const maxLines = 6;
+            const maxHeight = lineHeight * maxLines;
+
+            if (element.scrollHeight > maxHeight) {
+                setShowReadMore(true);
+            }
+        }
+    }, [CreditInfo?.biography]);
+
     return (
         <>
             <div className="flex flex-col items-center px-5 py-8">
@@ -61,9 +80,33 @@ const CreditInfo = ({ CreditInfo }: CreditInfoProps) => {
                     </div>
                     <div>
                         <p className="font-bold">Biography</p>
-                        <p className="text-gray-700 text-[15px]">
-                            {CreditInfo?.biography}
-                        </p>
+                        <div>
+                            <p
+                                ref={bioRef}
+                                className={`text-gray-700 text-[15px] ${
+                                    !isExpanded ? "line-clamp-6" : ""
+                                }`}
+                            >
+                                {CreditInfo?.biography}
+                            </p>
+                            {showReadMore && (
+                                <button
+                                    onClick={() => setIsExpanded(!isExpanded)}
+                                    className="font-bold hover:text-blue-400 mt-1"
+                                >
+                                    {isExpanded ? (
+                                        <>Show less</>
+                                    ) : (
+                                        <>
+                                            Read more{" "}
+                                            <FontAwesomeIcon
+                                                icon={faArrowRight}
+                                            />
+                                        </>
+                                    )}
+                                </button>
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>

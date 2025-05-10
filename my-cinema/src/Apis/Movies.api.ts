@@ -18,7 +18,7 @@ export const getPopularMovies = (
         .then((response) => response.data);
 };
 
-export const getMovieDetails = (id: string | number, language = "vi-VN") => {
+export const getMovieDetails = (id: string | number, language = "en-US") => {
     return http
         .get<MovieDetails>(`movie/${id}`, {
             params: { language },
@@ -62,7 +62,7 @@ export const getKeyword = (id: string | number) => {
 
 export const getMovieRecommendations = (
     id: string | number,
-    language = "vi-VN"
+    language = "en-US"
 ) => {
     return http
         .get<RecommendationResponse>(`movie/${id}/recommendations`, {
